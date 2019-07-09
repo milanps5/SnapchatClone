@@ -8,4 +8,47 @@
         tools:context=".SnapsActivity"
         android:background="#00FDFE">
 
+    <ListView
+            android:layout_width="395dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:id="@+id/snapsListView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/snapsTextView"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/newSnapButton"/>
+
+    <TextView
+            android:text="Recieved Snaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:id="@+id/snapsTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:textSize="22sp"
+            android:textColor="#F9E025"
+            android:fontFamily="serif"
+            android:textStyle="bold|italic"/>
+
+    <Button
+            android:text="New Snap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp"
+            android:id="@+id/newSnapButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="32dp"
+            android:textSize="18sp"
+            android:background="#F9E025"
+            android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

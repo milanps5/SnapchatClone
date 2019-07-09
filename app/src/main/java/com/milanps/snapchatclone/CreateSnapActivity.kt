@@ -83,9 +83,18 @@ class CreateSnapActivity : AppCompatActivity() {
         val data = baos.toByteArray()
 
 
-        var uploadTask = FirebaseStorage.getInstance().getReference().child("images").child(imageName).putBytes(data)
+        var uploadTask = FirebaseStorage.getInstance().reference.child("images").child(imageName).putBytes(data)
         uploadTask.addOnSuccessListener { taskSnapshot ->
             val downloadUrl = taskSnapshot.metadata
+
+            val intent = Intent(this, ChooseUserActivity::class.java)
+
+            intent.putExtra("imageURL", downloadUrl.toString())
+            intent.putExtra("imageName", imageName)
+            intent.putExtra("message", messageEditText?.text.toString())
+
+            startActivity(intent)
+
         }.addOnFailureListener({
             Toast.makeText(this, "Upload Failed", Toast.LENGTH_SHORT).show()
         })
